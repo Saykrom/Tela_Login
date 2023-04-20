@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estilos-agendas.css">
+       
+    <title>Agendas</title>
+</head>
+
+
+<body>
+
+
+<div class="top-navbar">
+    <a th:href="@{/agendas}">
+        <button class="voltar-btn">Voltar</button>
+    </a>
+</div>
+
+
+<div class="title-container ">
+    <h1> Agendar Evento</h1>
+    <h6><b>Agendas do Senac</b></h6>
+</div>
+
+
+<div class="agendas-container">
+
+
+    <ul class="cards-list">
+
+
+        <form class="novo-form" th:action="@{/agendas/save}" th:object="${agenda}" method="post">
+            <table>
+                <tr>
+                    <td><label for="titulo"><b>Titulo:</b> </label></td>
+                    <td><input type="text" th:field="*{titulo}" id="titulo" name="titulo"></td>
+                </tr>
+                <tr>
+                    <td><label for="dataInicio"><b>Data início:</b> </label></td>
+                    <td><input type="date"th:field="*{inicio}" id="dataInicio" name="dataInicio"></td>
+                </tr>
+                <tr>
+                    <td><label for="dataTermino"><b>Data termino: </b> </label></td>
+                    <td><input type="date"th:field="*{termino}" id="dataTermino" name="dataTermino"></td>
+                   
+                </tr>
+                <tr>
+                    <td><label for="horaInicio"><b>Hora início:</b> </label></td>
+                    <td><input type="time" th:field="*{horaInicio}" id="horaInicio" name="horaInicio"></td>
+                </tr>
+                <tr>
+                    <td><label for="horaTermino"><b>Hora termino:</b> </label></td>
+                    <td><input type="time" th:field="*{horaTermino}" id="horaTermino" name="horaTermino"></td>
+                </tr>
+                <tr>
+                    <td><label for="observacao"><b>Observação:</b> </label></td>
+                    <td><input type="text" th:field="*{observacao}" id="observacao" name="observacao"></td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="colaborador"><b>Colaborador:</b> </label></td>
+                    <td>
+                        <div class="colaboradores-dropdown">
+                            <select id="colaborador" th:field="*{colaborador}" class="colaborador-select" style="width: 300px; color: #000; height: 40px; font-size: 14px;">
+
+
+                                <option value="0" style="color: #000;"><b>Escolha um colaborador</b></option>
+                                <option th:each="colaborador : ${colaboradores}" th:value="${colaborador.id}" th:text="${colaborador.nome}" style="color: #000;"></option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="local"><b>Local:</b> </label></td>
+                    <td>
+                        <div class="locais-dropdown">
+                            <select id="local" th:field="*{local}" class="local-select" style="width: 300px; color: #000; height: 40px; font-size: 14px;">
+
+
+                                <option value="0" style="color: #000;"><b>Escolha um local</b></option>
+                                <option th:each="local : ${locais}" th:value="${local.id}" th:text="${local.descricao}" style="color: #000;"></option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><label for="equipamentos"><b>Equipamentos: </b></label></td>
+                    <td>
+                        <div class="equipamentos-dropdown">
+                            <select id="equipamentos" th:field="*{equipamentos}" class="equipamento-select" style="width: 300px; color: #000; height: 40px; font-size: 14px;">
+
+
+                                <option value="0" style="color: #000;"><b>Escolha um equipamento</b></option>
+                                <option th:each="equipamento : ${equipamentos}" th:value="${equipamento.id}" th:text="${equipamento.descricao}" style="color: #000;"></option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                 
+                    <td><input type="submit" value="Salvar"></td>
+             
+                   
+                </tr>
+            </table>
+        </form>
+
+
+    </ul>
+</div>
+
+
+</body>
+
+
+</html>

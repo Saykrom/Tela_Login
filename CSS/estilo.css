@@ -5,11 +5,14 @@
 }
 
 body{
-    background-image: url("../IMAGENS/fundo2.jpg");
-    background-position: 50% 70%;
-    color: white;
+    background: url("../IMAGENS/telaLogin.jpg")no-repeat center center;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    padding-top: 70px;
+    color: rgb(255, 255, 255);
     text-align: center;
-    padding: 200px;
+    padding: 30px;
     font-family: Arial;
         display: flex;
         justify-content: center;
@@ -45,7 +48,7 @@ div#corpo-form h1,div#Corpo-form-Cad h1{
     width: 20px;
 }
 a{
-    color: white;
+    color: rgba(255, 255, 255, 0.171);
     text-decoration: none;
     text-align: center;
 

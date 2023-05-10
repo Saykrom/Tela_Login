@@ -1,0 +1,75 @@
+body {
+    background-image: url("../imagens/fundoFabrica.jpg") !important;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar-dark {
+    background-color: transparent !important;
+}
+
+.nav-link {
+    color: white ;
+}
+
+.col {
+    margin-top: 3em !important;
+}
+
+.col h1 {
+    font-size: 2em !important;
+    color: white;
+}
+
+#form-container {
+    padding-left: 15px;
+    width: max-content;
+}
+
+#local-descricao label {
+    margin-bottom: 0em;
+}
+
+#descricao-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#descricao-container label {
+    color: white;
+}
+
+#local-descricao {
+    width: 15em;
+    height: 2.5em;
+}
+
+#observacao-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+}
+
+#observacao-container label {
+    color: white;
+}
+
+#local-observacao {
+    width: 15em;
+    height: 2.5em;
+}
+
+.btn-primary {
+    width: 15em;
+    height: 3em;
+    background-color: #f78b1f;
+    border-color: #f78b1f;
+}
+
+button, input, optgroup, select, textarea{
+
+    margin: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
